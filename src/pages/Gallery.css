@@ -1,0 +1,509 @@
+.gallery-container {
+  padding-top: var(--header-height);
+  background-color: #e0e0e0;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  scroll-margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.gallery-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 20px;
+  padding-top: 0;
+  color: #111827;
+  font-size: 2.5rem;
+  font-weight: 800;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.gallery-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: none; /* Removed transition */
+  border-radius: 30px 30px 0 0;
+}
+
+/* Removed hover effect */
+.gallery-item:hover img {
+  transform: none;
+  filter: none;
+}
+
+.item-content {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.item-content h2 {
+  color: #111827;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: "Playfair Display", serif;
+}
+
+.item-content h3 {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Stagger animation for gallery items */
+.gallery-grid.animate .gallery-item {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.gallery-grid.animate .gallery-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.gallery-grid.animate .gallery-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.gallery-grid.animate .gallery-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.gallery-grid.animate .gallery-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.gallery-grid.animate .gallery-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.gallery-grid.animate .gallery-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive styles */
+@media (max-width: 1400px) {
+  .gallery-content {
+    padding: 0 2rem;
+  }
+
+  .gallery-container {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .gallery-title {
+    font-size: 2.2rem;
+  }
+
+  .gallery-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-column {
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-item {
+    aspect-ratio: 16/9;
+  }
+
+  .gallery-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-container {
+    padding: 2rem;
+  }
+
+  .gallery-item .overlay {
+    display: none; /* Remove text background */
+  }
+
+  .item-content h3 {
+    display: block; /* Ensure h3 text is shown */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem; /* Increase font size */
+    font-weight: bold; /* Convert to h1 weight */
+  }
+
+  .close {
+    top: 5%; /* Adjust position for smaller screens */
+    right: 5%;
+    font-size: 50px; /* Adjust font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    padding-top: var(--header-height-mobile);
+    scroll-margin-top: 0;
+    margin-top: 0;
+  }
+
+  .gallery-content {
+    padding: 1rem;
+  }
+
+  .gallery-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery-grid {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery-column {
+    gap: 1rem;
+  }
+
+  .item-overlay {
+    padding: 1rem;
+  }
+
+  .item-overlay h3 {
+    font-size: 1rem;
+  }
+
+  .gallery-item .overlay {
+    display: none; /* Remove text background */
+  }
+
+  .item-content h3 {
+    display: block; /* Ensure h3 text is shown */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem; /* Increase font size */
+    font-weight: bold; /* Convert to h1 weight */
+  }
+
+  .close {
+    top: 5%; /* Adjust position for smaller screens */
+    right: 5%;
+    font-size: 40px; /* Adjust font size */
+  }
+
+  .modal-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .item-content {
+    padding: 1rem;
+  }
+
+  .item-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .item-content h3 {
+    font-size: 1.2rem; /* Increase font size */
+    font-weight: bold; /* Convert to h1 weight */
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .gallery-item .overlay {
+    display: none; /* Remove text background */
+  }
+
+  .item-content h3 {
+    display: block; /* Ensure h3 text is shown */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .close {
+    top: 10px; /* Position from the top */
+    right: 10px; /* Position from the right */
+    bottom: auto; /* Remove bottom positioning */
+    left: auto; /* Remove left positioning */
+    transform: none; /* Remove centering transformation */
+    font-size: 40px; /* Adjust font size */
+    position: absolute; /* Ensure absolute positioning */
+  }
+
+  .modal-gallery {
+    grid-template-columns: 1fr; /* 1 column for extra small screens */
+  }
+}
+
+@media (max-width: 468px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .item-content {
+    padding: 0.5rem;
+  }
+
+  .item-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .item-content h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .gallery-item .overlay {
+    display: none;
+  }
+
+  .item-content h3 {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .close {
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+  }
+
+  .modal-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.modal-content {
+  position: absolute; /* Change to absolute positioning */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for centering */
+  background-color: #fefefe;
+  padding: 40px; /* Increase padding to all sides */
+  border: 1px solid #888;
+  width: 80%; /* Revert width */
+  max-width: 900px; /* Revert max-width */
+  text-align: center;
+  height: calc(100% - 80px); /* Revert height */
+  overflow-y: auto; /* Enable scrolling */
+  flex-direction: row; /* Align items in a row */
+  gap: 20px; /* Add space between main and sub-images */
+  margin-top: 20px; /* Add margin to the top */
+  margin-bottom: 20px; /* Add margin to the bottom */
+}
+
+.modal-content .main-image {
+  width: 40%; /* Decrease width */
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 15px 15px 15px 15px; /* Add border radius to the top */
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.modal-caption {
+  margin-top: 10px;
+  color: black;
+}
+
+.modal-caption h2 {
+  color: #111827;
+  font-size: 2rem;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+}
+
+.close {
+  position: fixed; /* Ensure the close button is always visible */
+  top: 10px; /* Position from the top */
+  right: 20px; /* Position from the right */
+  color: rgb(0, 0, 0); /* Change color to black */
+  font-size: 60px; /* Increase font size */
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px; /* Add padding */
+  border-radius: 50%; /* Make it circular */
+  transition: background-color 0.3s ease; /* Add transition */
+  z-index: 1002; /* Ensure it is above other elements */
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-gallery {
+  display: grid; /* Change to grid layout */
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 10px;
+  width: 100%; /* Full width */
+  padding-bottom: 10px;
+}
+
+.modal-gallery-item {
+  width: 100%; /* Full width of grid cell */
+  height: auto;
+  border-radius: 0 0 30px 30px; /* Add border radius to the top */
+  flex: 1 1 45%; /* Adjust flex properties to increase size */
+}
+
+.modal-gallery-item img {
+  transition: transform 0.3s ease;
+}
+
+.large-image-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.large-image {
+  max-width: 80%; /* Adjusted size */
+  max-height: 80%; /* Adjusted size */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 3px solid rgb(20, 20, 20); /* Added border */
+  animation: zoomIn 0.5s ease forwards;
+}
