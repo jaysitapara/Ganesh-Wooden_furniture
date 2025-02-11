@@ -10,15 +10,20 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>About Us</h3>
+          <h3>
+            <u>About Us</u>
+          </h3>
           <p>
-            <b className="footer-name">Ganesh Wooden Furniture</b> crafts exceptional wooden furniture
-            combining traditional craftsmanship with modern design since 2010.
+            <b className="footer-name">Ganesh Wooden Furniture</b> crafts
+            exceptional wooden furniture combining traditional craftsmanship
+            with modern design since 2010.
           </p>
         </div>
 
         <div className="footer-section">
-          <h3>Quick Links</h3>
+          <h3>
+            <u>Quick Links</u>
+          </h3>
           <ul>
             <li>
               <a href="#home">Home</a>
@@ -36,7 +41,9 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <h3>Contact Info</h3>
+          <h3>
+            <u>Contact Info</u>
+          </h3>
           <ul>
             <li>
               <a href="/" onClick={() => window.location.reload()}>
@@ -57,7 +64,7 @@ const Footer = () => {
             </li>
             <li>
               Email:{" "}
-              <a href="mailto:thoriya92@gmail.com">thoriya92@gmail.com</a>
+              <a href="mailto:thoriya0221@gmail.com">thoriya0221@gmail.com</a>
             </li>
           </ul>
         </div>
