@@ -99,28 +99,50 @@
 }
 
 .form-group {
+  display: flex;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
 .form-group input,
 .form-group textarea {
-  width: 95%;
+  width: 100%; /* Adjust width to fit with select */
   padding: 0.75rem;
   border: 1px solid #dddddd;
   border-radius: 8px;
   font-size: 0.9rem;
   background-color: #ffffff;
+  color: #000000; /* Set text color to black */
   transition: border-color 0.3s ease, background-color 0.3s ease; /* Added transition */
+}
+
+.form-group select {
+  width: 30%;
+  padding: 0.75rem;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  color: #000000; /* Set text color to black */
+  margin-right: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease; /* Added transition */
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #aaaaaa;
+  color: #000000;
 }
 
 .form-group input:hover,
 .form-group textarea:hover {
-  border-color: #007bff; /* Changed border color on hover */
+  border-color: #3dc4dc; /* Changed border color on hover */
   background-color: #f0f8ff; /* Added background color on hover */
 }
 
@@ -130,6 +152,30 @@
   border-color: #007bff;
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group .country-code {
+  width: 20%;
+  padding: 0.75rem;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  color: #000000;
+  margin-right: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group .country-code:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group .country-code:hover {
+  border-color: #3dc4dc;
+  background-color: #f0f8ff;
 }
 
 .form-group:first-child {
@@ -156,6 +202,46 @@
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05),
     0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.success-message {
+  color: rgb(255, 0, 0);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.flash-message {
+  position: fixed;
+  top: 50px;
+  right: 30px;
+  background-color: #4caf50; /* Changed to a softer green */
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px; /* Softer border radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+.flash-message p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.flash-message::before {
+  content: '✔'; /* Checkmark icon */
+  font-size: 1.5rem;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
 }
 
 @media (max-width: 992px) {
