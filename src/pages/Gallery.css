@@ -62,6 +62,12 @@
   border-radius: 30px 30px 0 0;
 }
 
+.gallery-item img,
+.modal-gallery-item img {
+  height: auto; /* Revert to auto height */
+  object-fit: cover; /* Ensure images cover the container */
+}
+
 /* Removed hover effect */
 .gallery-item:hover img {
   transform: none;
@@ -405,7 +411,7 @@
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust for centering */
-  background-color: #fefefe;
+  background-color: #eeeeee;
   padding: 40px; /* Increase padding to all sides */
   border: 1px solid #888;
   width: 80%; /* Revert width */
@@ -423,7 +429,7 @@
   width: 40%; /* Decrease width */
   height: auto;
   margin-bottom: 20px;
-  border-radius: 15px 15px 15px 15px; /* Add border radius to the top */
+  border-radius: 30px 30px 0 0; /* Add border radius to the top */
 }
 
 .modal-content img {
@@ -479,10 +485,15 @@
   height: auto;
   border-radius: 0 0 30px 30px; /* Add border radius to the top */
   flex: 1 1 45%; /* Adjust flex properties to increase size */
+  cursor: pointer; /* Change cursor to pointer */
 }
 
 .modal-gallery-item img {
   transition: transform 0.3s ease;
+  width: 100%; /* Ensure full width */
+  height: 280px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensure images cover the container */
+  border-radius: 20px; /* Add border radius */
 }
 
 .large-image-modal {
@@ -502,7 +513,7 @@
 .large-image {
   max-width: 80%; /* Adjusted size */
   max-height: 80%; /* Adjusted size */
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border: 3px solid rgb(20, 20, 20); /* Added border */
   animation: zoomIn 0.5s ease forwards;

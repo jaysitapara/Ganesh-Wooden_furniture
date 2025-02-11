@@ -24,16 +24,48 @@ const About = () => {
           className={`about-section ${isFirstSectionVisible ? "animate" : ""}`}
         >
           <div className="about-text">
-            <h2>
-              <u>Our Story</u>
-            </h2>
-            <p>
-              Founded in 2010, <b>Ganesh Wooden Furniture</b> has been crafting
-              exceptional wooden furniture that combines traditional
-              craftsmanship with modern design. Our dedication to quality and
-              attention to detail has made us a trusted name in the furniture
-              industry.
-            </p>
+            <div className="owner-info-row">
+              <div className="owner-info" style={{ color: "black" }}>
+                <h2 style={{ color: "black" }}>Jigar Thoriya</h2>
+                <p>
+                  <b>No:</b> <a href="tel:+9190997002417">+91 90997 002417</a>
+                  <br />
+                  <b>Email:</b>{" "}
+                  <a href="mailto:thoriya0221@gmail.com">
+                    thoriya0221@gmail.com
+                  </a>
+                  <br />
+                  <b>Address:</b>{" "}
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Mavdi+area+Rajkot,+Gujarat,+India"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Mavdi area Rajkot, Gujarat, India
+                  </a>
+                </p>
+              </div>
+              <div className="owner-info">
+                <h2 style={{ color: "black" }}>Bharat Sarvaiya</h2>
+                <p>
+                  <b>No:</b> <a href="tel:+919723080046">+91 97230 80046</a>
+                  <br />
+                  <b>Email:</b>{" "}
+                  <a href="mailto:sarvaiya0221@gmail.com">
+                    sarvaiya0221@gmail.com
+                  </a>
+                  <br />
+                  <b>Address:</b>{" "}
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Mavdi+area+Rajkot,+Gujarat,+India"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Mavdi area Rajkot, Gujarat, India
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
           <div className="about-image">
             <img src={Story} alt="Our Workshop" />
