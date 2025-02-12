@@ -18,7 +18,7 @@ const ImageSlider = () => {
     },
     {
       url: image3,
-      title: "Interior storage in the chaise piece of the couch"
+      title: "Interior storage in the chaise piece the couch"
     },
   ];
 
