@@ -54,7 +54,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <h1 className="header-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-          <span>Ganesh</span>Wooden Furniture
+          <span>Ganesh</span>Wood Work
         </h1>
         
         <div className={`menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>

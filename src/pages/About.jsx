@@ -17,14 +17,14 @@ const About = () => {
   return (
     <div className="about-container" id="about">
       <div className="about-content">
-        <h1 className="about-title">About Ganesh Wooden Furniture</h1>
+        <h1 className="about-title" style={{ textAlign: "left" }}>About Ganesh Wooden Furniture</h1>
 
         <div
           ref={firstSectionRef}
           className={`about-section ${isFirstSectionVisible ? "animate" : ""}`}
         >
           <div className="about-text">
-            <div className="owner-info-row">
+            <div className="owner-info-column">
               <div className="owner-info" style={{ color: "black" }}>
                 <h2 style={{ color: "black" }}>Jigar Thoriya</h2>
                 <p>
@@ -33,15 +33,6 @@ const About = () => {
                   <b>Email:</b>{" "}
                   <a href="mailto:thoriya0221@gmail.com">
                     thoriya0221@gmail.com
-                  </a>
-                  <br />
-                  <b>Address:</b>{" "}
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Mavdi+area+Rajkot,+Gujarat,+India"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Mavdi area Rajkot, Gujarat, India
                   </a>
                 </p>
               </div>
@@ -53,15 +44,6 @@ const About = () => {
                   <b>Email:</b>{" "}
                   <a href="mailto:sarvaiya0221@gmail.com">
                     sarvaiya0221@gmail.com
-                  </a>
-                  <br />
-                  <b>Address:</b>{" "}
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Mavdi+area+Rajkot,+Gujarat,+India"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Mavdi area Rajkot, Gujarat, India
                   </a>
                 </p>
               </div>

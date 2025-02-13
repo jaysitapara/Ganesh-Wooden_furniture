@@ -16,10 +16,11 @@
 }
 
 .about-title {
-  text-align: center;
+  text-align: left; /* Changed from center to left */
   margin-bottom: 3rem;
   margin-top: 20px;
   padding-top: 0;
+  padding-left: 2rem; /* Added to add space on the left side */
   color: #111827;
   font-size: 2.5rem;
   font-weight: 800;
@@ -214,6 +215,12 @@
 
 .owner-info a {
   color: black; /* Added to set text color to black */
+}
+
+.owner-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 @keyframes fadeInUp {
